@@ -1,0 +1,324 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>J2P2</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+    <!--USE THIS PATH ONCE DEPLOYED TO HEROKU-->
+    <!-- <link rel="stylesheet" href= "../css/stylesheet.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
+<Body>
+  <nav class="navbar navbar-expand-lg navbar-light"style="background-color: #485c7f;">
+    <a class="navbar-brand" href="/">Small Business Administration</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/"> Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/learn-more">Learn More</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+
+<!-- Main Container -->
+<div class="container h-100">
+
+  <div class="row h-15">
+    <h1 class="header" style="margin: auto; color: #2C365E;">PROJECT SUMMARY</h1>
+  </div>
+
+
+  <!-- Contaier 1 -->
+  <div class="container h-30">
+
+      <div class="row h-10"></div>
+
+      <div class="row space_btw_thumb">
+        <h2>SBA</h2>
+      </div>
+
+      <div class="row h-10"></div>
+
+      <div class="row">
+
+        <div class="col-sm">
+          <h3>WHAT IS SBA?</h3>
+          <p class="p_about_summary">
+            SBA assists small business owners and entrepreneurs to startup more feasibly.
+            It provides <strong>counseling</strong>, <strong>capital</strong>, and <strong>contracting</strong> expertise as the nation’s only go-to resource and voice for small
+            businesses.
+          </p>
+        </div>
+
+        <div class="col-sm">
+          <h3>WHY DOES IT EXIST?</h3>
+          <p class="p_about_summary">
+            SBA<strong> sets guidelines for loans</strong> made by its lenders.
+            It help to<strong> reduce risk for lenders</strong>. This makes it easier for small businesses to get loans.
+          </p>
+        </div>
+
+        <div class="col-sm">
+          <h3>HOW MORE LIKELY TO GET ONE?</h3>
+          <p class="p_about_summary">
+            From our project study, we look into
+          <ul>
+            <li>What drive lenders to lend?</li>
+            <li>Who are they lending to?</li>
+            <li>Lendig trends over the last decade</li>
+          </ul>
+          </p>
+          <button type="button" class="btn btn-secondary btn-sm" href="learn-more.html">Go Back to Learn More Page</button>
+        </div>
+
+      </div>
+
+      <div class="row h-10"></div>
+
+
+      <div class="row space_btw_thumb">
+        <h2>DATA ACCESS</h2>
+      </div>
+
+
+      <div class="row h-10"></div>
+
+      <!-- Nested Thumbnails -->
+      <div class="row space_btw_thumb">
+        <div class="media">
+          <img src="https://www.sba.gov/brand/assets/sba/img/pages/logo/logo.svg" width="200px" class="thumbnail_logo rounded mr-3" alt="...">
+          <div class="media-body">
+            <h3 class="mt-0">SBA Datasets</h3>
+            <ul>
+              <li>Download the datasets that is being clouded on AWS</li>
+              <li>.CSV files</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row space_btw_thumb">
+        <div class="media">
+          <img src="https://www.fintechfutures.com/files/2019/12/Amazon-Web-Services-Logo.png" width="200px" class="thumbnail_logo rounded mr-3" alt="...">
+          <div class="media-body">
+            <h3 class="mt-0">AWS</h3>
+            <ul>
+              <li>Push downloaded datasets to AWS</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row space_btw_thumb">
+        <div class="media">
+          <img src="https://www.freepnglogos.com/uploads/logo-mysql-png/logo-mysql-mysql-logo-png-images-are-download-crazypng-21.png" width="200px" class="thumbnail_logo rounded mr-3" alt="...">
+          <div class="media-body">
+            <h3 class="mt-0">MySql</h3>
+            <ul>
+              <li>Create the connection between AWS cloud and MySql in order to pull dynamicly.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row space_btw_thumb">
+        <div class="media">
+          <img src="https://miro.medium.com/max/438/1*0G5zu7CnXdMT9pGbYUTQLQ.png" width="200px" class="thumbnail_logo rounded mr-3" alt="...">
+          <div class="media-body">
+            <h3 class="mt-0">Flask App</h3>
+            <ul>
+              <li>Use Flask App to create API/Endpoints</li>
+              <li>Generate JSON format</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row space_btw_thumb">
+        <div class="media">
+          <img src="https://cdn4.iconfinder.com/data/icons/planning-color/64/infographic-diagram-data-visualization-analysis-512.png" width="200px" class="thumbnail_logo rounded mr-3" alt="...">
+          <div class="media-body">
+            <h3 class="mt-0">Visualizations</h3>
+            <ul>
+              <li>Use endpint as a URL to pull the data</li>
+              <li>Generate Visualizations by using Javascripts Libraries</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+  <!-- END Main Container 1 Div -->
+  </div>
+
+
+
+
+  <!-- CONTAINER 2 -->
+  <div class="container h-30">
+
+    <!-- Visualizations Section -->
+    <div class="container h-10">
+      <div class="row space_btw_thumb">
+        <h2>PROJECT RESULTS</h2>
+      </div>
+
+
+      <div class="row h-10"></div>
+
+      <div class="row">
+        <figure class="figure">
+          <img src="https://images.vexels.com/media/users/3/166120/isolated/preview/902e73421cb45c3a44aae01984e2991e-american-flag-map-icon-by-vexels.png" width="200px" height="200px" class="img-thumbnail visual_thumb" alt="...">
+          <figcaption class="figure-caption text-center">Total Loan Amount by States</figcaption>
+        </figure>
+
+        <figure class="figure">
+          <img src="https://www.iconbunny.com/icons/media/catalog/product/3/2/3293.10-horizontal-bar-graph-icon-iconbunny.jpg" width="200px" height="200px" class="img-thumbnail visual_thumb" alt="...">
+          <figcaption class="figure-caption text-center">Total Loan Amount by Year</figcaption>
+        </figure>
+
+        <figure class="figure">
+          <img src="https://www.iconbunny.com/icons/media/catalog/product/3/2/3293.10-horizontal-bar-graph-icon-iconbunny.jpg" width="200px" height="200px" class="img-thumbnail visual_thumb" alt="...">
+          <figcaption class="figure-caption text-center">Total Loan Amount by Industries</figcaption>
+        </figure>
+
+        <figure class="figure">
+          <img src="https://www.iconbunny.com/icons/media/catalog/product/3/2/3293.10-horizontal-bar-graph-icon-iconbunny.jpg" width="200px" height="200px" class="img-thumbnail visual_thumb" alt="...">
+          <figcaption class="figure-caption text-center">Total Loan Amount by Franchises</figcaption>
+        </figure>
+
+      </div>
+
+      <div class="row">
+        <figure class="figure">
+          <img src="https://www.iconbunny.com/icons/media/catalog/product/3/2/3293.10-horizontal-bar-graph-icon-iconbunny.jpg" width="200px" height="200px" class="img-thumbnail visual_thumb" alt="...">
+          <figcaption class="figure-caption text-center">Total Loan Amount by Franchises</figcaption>
+        </figure>
+
+        <figure class="figure">
+          <img src="https://icons-for-free.com/iconfiles/png/512/table-131988545753982590.png" width="200px" height="200px" class="img-thumbnail visual_thumb" alt="...">
+          <figcaption class="figure-caption text-center">Total Loan Amount by Business Types</figcaption>
+        </figure>
+
+        <figure class="figure">
+          <img src="https://www.iconbunny.com/icons/media/catalog/product/3/2/3293.10-horizontal-bar-graph-icon-iconbunny.jpg" width="200px" height="200px" class="img-thumbnail visual_thumb" alt="...">
+          <figcaption class="figure-caption text-center">Average Loan Approval by Banks</figcaption>
+        </figure>
+      </div>
+
+    <!-- End Project Results Div -->
+    </div>
+
+
+    <!-- Difficulties, Solutions, Ideal Future Study-->
+    <div class="container h-10">
+
+      <div class="row space_btw_thumb">
+        <h2>DIFFICULTIES AND SOLUTIONS</h2>
+      </div>
+
+      <div class="row h-10"></div>
+
+      <div class="row">
+
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">DIFFICULTIES</th>
+              <th scope="col">SOLUTIONS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mark</td>
+              <td>Otto</td>
+            </tr>
+            <tr>
+              <td>Jacob</td>
+              <td>Thornton</td>
+            </tr>
+            <tr>
+              <td>Larry</td>
+              <td>the Bird</td>
+            </tr>
+            <tr>
+              <td>Larry</td>
+              <td>the Bird</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="row">
+
+
+        <div class="row space_btw_thumb">
+          <h2>IDEAL FUTURE STUDY</h2>
+        </div>
+
+        <div class="row h-10"></div>
+
+
+        <!-- <div class="row">
+          <ul class="list-group">
+            <li class="list-group-item">How SBA Loan does change the GDP Per Capita by States?</li>
+            <li class="list-group-item">What kind of Job Feilds are created the most from SBA Loan?</li>
+            <li class="list-group-item">What kind of Buniness Industries tend to payoff loan faster?</li>
+            <li class="list-group-item">What are the factores SBA Loan considering to grant to most SBA Loan Guarantee Approval?</li>
+            <li class="list-group-item">Many More</li>
+          </ul>
+        </div> -->
+
+      </div>
+
+  <footer>
+    <p class="paragraphs-home">AUTHORS: JESSICA MURILLO - PARIYA POOCHAROEN - JAMES SMITH<br>
+    <a href="https://github.com/jsmith6112/J2P2-Project-2">GitHub</a></p>
+  </footer>
+    <!-- END Difficulties/Solutions/Ideal Future Study -->
+    </div>
+
+
+  <!-- End the Container 2 -->
+  </div>
+
+
+<!-- End the Main Container for the Whole page -->
+</div>
+
+
+
+
+
+
+</Body>
+
+</html>

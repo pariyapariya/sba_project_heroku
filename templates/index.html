@@ -1,0 +1,108 @@
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+  <!--USE THIS PATH ONCE DEPLOYED TO HEROKU-->
+  <!-- <link rel="stylesheet" href= "../css/stylesheet.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+
+  <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <!-- From Pariya -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js" integrity="sha512-FHsFVKQ/T1KWJDGSbrUhTJyS1ph3eRrxI228ND0EGaEp6v4a/vGwPWd3Dtd/+9cI7ccofZvl/wulICEurHN1pg==" crossorigin="anonymous"></script>
+</head>
+
+
+
+
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light"style="background-color: #485c7f;">
+    <a class="navbar-brand" href="/">Small Business Administration</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/"> Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/learn-more">Learn More</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="jumbotron-fluid jumbotron" style="height: 500px;">
+    <div class="container">
+      <h1 class="display-4">SMALL BUSINESS ADMINISTRATION</h1>
+      <p class="lead">Learn what drives banks to lend, who they are lending to and they're lending trends over the last decade</p>
+    </div>
+  </div>
+  <h2 class="header"> WHERE ARE THE BORROWERS </h2>
+  <P class="paragraphs-home">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id gravida augue. Sed nec dui ut nisl posuere venenatis.
+    Donec pharetra neque id nisl iaculis, a lobortis lectus euismod. </p>
+
+  <div class="container">
+    <div class="row" style=" width: 1000px;">
+      <div class="col" style="height: 800px;">
+        <div id="map" style="background-color: none; height: 100%; width: 100%;"></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="line">
+
+  <h2 class="header"> LENDING RATES OVER TIME </h2>
+  <P class="paragraphs-home">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id gravida augue. Sed nec dui ut nisl posuere venenatis.
+    Donec pharetra neque id nisl iaculis, a lobortis lectus euismod. </p>
+
+  <div class="container">
+    <div class="row" style=" width: 1000px;">
+      <div class="col" style="height: 800px;">
+        <div id="sbayear"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--UNCOMMENT ONCE IN HEROKU-->
+  <!-- <script src="../js/app.js"></script>
+  <script src="../js/map.js"></script>
+  <script src="../js/choropleth.js"></script>
+  <script src="../js/industry_class.js"></script> -->
+
+
+
+  <script src="{{url_for('static', filename='js/config.js')}}"></script>
+  <script src="{{url_for('static', filename='js/app.js')}}"></script>
+  <script src="{{url_for('static', filename='js/map.js')}}"></script>
+  <script src="{{url_for('static', filename='js/choropleth.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/industry_class.js')}}"></script>
+  
+ 
+    <footer>
+    <p class="paragraphs-home">AUTHORS: JESSICA MURILLO - PARIYA POOCHAROEN - JAMES SMITH<br>
+    <a href="https://github.com/jsmith6112/J2P2-Project-2">GitHub</a></p>
+    </footer>
+  </body>
+</html>
